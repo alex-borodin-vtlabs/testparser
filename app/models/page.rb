@@ -16,7 +16,9 @@ class Page < ApplicationRecord
       self.errors.add(:error, e.message)
       return false
     else
-      self.page_content = doc.css('h1', 'h2', 'h3', 'a').map { |tag| tag.text.strip }
+      h_content = doc.css('h1', 'h2', 'h3').map { |tag| tag.text.strip }
+      href_content = doc.css('a').map { |link| link['href'] }
+      self.page_content = h_content + href_content
       return self.save
     end
   end

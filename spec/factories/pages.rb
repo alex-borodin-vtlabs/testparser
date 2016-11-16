@@ -3,7 +3,7 @@ FactoryGirl.define do
     factory :page do
         factory :google_page do
             id 1
-            page_url "http://google.com"
+            page_url "https://github.com"
             page_content ""
         end
         factory :wrong_url do

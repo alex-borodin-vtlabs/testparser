@@ -17,7 +17,7 @@ RSpec.describe "Pages", type: :request do
     end
     it "has content!" do
       post api_v0_pages_path, params: {page: @attrs}
-      expect(response.body).to include("Google")
+      expect(response.body).to include("https://github.com/")
     end
     it "not creates with no url!" do
       post api_v0_pages_path, params:  {page: @noattrs}
